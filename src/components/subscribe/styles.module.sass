@@ -1,0 +1,45 @@
+@import '../../assets/styles/vars.sass'
+
+.subscribe
+    padding: 14px
+    background-color: $dark
+    border-radius: $brs10
+    color: $white
+
+    &_title
+        +ft(18, 26, 700)
+
+    &_note
+        +ft(13, 13, 500)
+        opacity: 0.5
+
+    &_field_group
+        width: 100%
+        margin-top: $gap*2
+        margin-bottom: $gap*2
+        display: grid
+        grid-template-columns: 2fr 1fr
+        row-gap: $gap
+        border-radius: 4px
+        overflow: hidden
+
+        input
+            width: 100%
+            padding: 12px 20px
+            +ft(12, 12, 400)
+            border: none
+            background-color: $dark2
+            color: $white
+            &:focus, &:hover, &:active
+                appearance: none
+                border: none
+                box-shadow: none
+                outline: none
+            &[type=submit]
+                border: none
+                background-color: $black
+                color: $white
+                cursor: pointer
+                letter-spacing: 0.01em
+                &:focus, &:hover, &:active
+                    background-color: lighten($black, 2%)

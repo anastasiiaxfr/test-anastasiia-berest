@@ -1,0 +1,14 @@
+@import '../../assets/styles/vars.sass'
+
+.auth
+    +flex(flex, center, center, nowrap)
+    gap: $gap*2
+
+    &_btn
+        +flex(flex, center, center, nowrap)
+        +sz(30px, 30px)
+        border-radius: 50%
+        border: 1px solid $black
+        transition: $trs
+        &:hover, &:focus, &:active
+            background-color: darken($light, 5%)

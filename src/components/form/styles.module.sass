@@ -1,0 +1,74 @@
+@import '../../assets/styles/vars.sass'
+
+.form
+    max-width: 1196px
+    margin-top: 50px
+    padding: 10px
+    border-radius: 10px
+    background-color: $white
+    box-shadow: 0 0 30px 0 rgba($black, 0.03)
+
+    hgroup
+        text-align: left
+
+    &_content
+        display: grid
+        grid-template-columns: 1.5fr 2fr
+
+    &_contact
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        padding: 40px
+        color: $white
+        border-radius: 10px
+        background: $black url('../../assets/img/shapes.svg') no-repeat 100% 100%/200px
+
+    &_form
+        margin: -10px
+        background: url('../../assets/img/plane.svg') no-repeat calc(50% + 215px/2) 100%/200px
+
+    &_title
+        +ft(28, 28, 600)
+    
+    &_subtitle
+        margin-top: $gap*2
+        +ft(18, 18, 400)
+        color: $text_2
+
+    &_info
+        margin-top: $gap*2
+        margin-bottom: $gap*2
+
+    +maw($md)
+        &_content
+            grid-template-columns: 1fr
+
+    +maw($xs)
+        &_form
+            background-size: 150px
+
+        &_contact
+            text-align: center
+            align-items: center
+            *
+                text-align: center
+                margin-left: auto
+                margin-right: auto 
+
+            a
+                display: block
+
+            svg
+                display: block
+                margin-left: auto
+                margin-right: auto
+                margin-bottom: $gap
+                +sz(24px, 24px)
+
+        &_title
+            +ft(20, 20, 600)
+    
+        &_subtitle
+            +ft(11, 11, 400)

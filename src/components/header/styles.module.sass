@@ -1,0 +1,84 @@
+@import '../../assets/styles/vars.sass'
+
+.header
+    width: 100%
+    padding: 20px 0
+
+    .container
+        +flex(flex, center, space-between, nowrap)
+        gap: $gap
+        
+    .logo
+        +ft(24, 24, 800)
+        white-space: nowrap
+
+    .nav
+        +flex(flex, center, space-between, wrap)
+        gap: $gap*5
+        margin-right: 5%
+        a
+            display: block
+            margin: $gap 0
+            &:hover, &:focus, &:active
+                text-shadow: 0 0 0
+
+    .menu
+        +flex(flex, center, flex-end, wrap)
+        gap: $gap*5
+        width: 100%
+        margin-left: auto
+        margin-right: 0
+
+        &_toggle
+            +flex(flex, center, center, nowrap)
+            padding: 0
+            border: none
+            background: transparent
+            display: none
+
+            &_close
+                display: none
+
+
+    +maw($md)
+        .container
+            flex-wrap: wrap
+
+        .nav
+            display: block
+            margin: 0
+            a
+                margin: $gap*2 0
+
+        .menu
+            display: none
+
+            &_toggle
+                display: flex
+
+        
+        &.open
+            +ps(fixed, (t, 0), (l, 0))
+            z-index: 100500
+            background: $dark
+            color: $white
+
+            .menu
+                display: block
+
+                :global([class*=auth_btn])
+                    border-color: $white
+                    &:hover, &:focus, &:active
+                        background-color: $black
+            
+                svg
+                    filter: invert(1)
+                
+                &_toggle
+                    color: $white
+                    & > *:first-child
+                        display: none
+                    & > *:last-child
+                        display: flex
+
+

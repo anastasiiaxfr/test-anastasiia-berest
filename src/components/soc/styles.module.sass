@@ -1,0 +1,14 @@
+@import '../../assets/styles/vars.sass'
+
+.soc
+    +flex(flex, center, flex-start, nowrap)
+    gap: $gap
+    a
+        +flex(flex, center, center, nowrap)
+        +sz(30px, 30px)
+        border-radius: 50%
+        background-color: rgba($white, 0.1)
+        transition: $trs
+        &:hover, &:active, &:focus
+            background-color: $white
+            color: $black

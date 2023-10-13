@@ -1,0 +1,66 @@
+@import '../../assets/styles/vars'
+
+.footer
+    +theme(dark)
+    padding: 65px 0
+
+    .logo
+        display: inline-block
+        +ft(36, 36, 800)
+        &:hover, &:focus, &:active
+            text-decoration: none
+
+    &_title
+        margin-bottom: $gap*3
+        +ft(18, 26, 600)
+
+    &_top
+        .container
+            text-align: center
+
+    &_btm
+        .container
+            display: grid
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr
+            align-items: flex-start
+            gap: $gap*5
+            row-gap: $gap*3
+            padding-top: $gap*3
+            margin-top: $gap*5
+            border-top: 1px solid $white
+
+            +maw($xmd)
+                grid-template-columns: 2fr 1fr 1fr 1fr
+
+                & > *:last-child
+                    grid-column: 1/-1
+
+            +maw($sm)
+                grid-template-columns: auto auto
+
+            +maw($xs)
+                a
+                    flex-wrap: wrap
+                svg
+                    display: block
+                    +sz(24px, 24px)
+
+    &_nav
+        max-width: 300px
+
+    &_menu
+        width: 100%
+        +flex(flex, flex-start, space-between, wrap)
+        gap: $gap*3
+
+    a
+        +flex(flex, flex-start, flex-start, nowrap)
+        gap: $gap
+        margin: $gap + 6px 0
+        +ft(16, 16*1.4, 400)
+        &:hover, &:focus, &:active
+            text-decoration: underline
+
+        svg
+            +sz(16px, 16px)
+            min-width: 16px

@@ -1,0 +1,93 @@
+@import '../../../assets/styles/vars.sass'
+
+$spacer: 45px
+$spacer_sm: 20px
+   
+.form
+    padding: 50px
+
+    &_row
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: $gap*4
+
+    &_group
+        margin-bottom: $spacer
+
+    &_radiogroup
+        +flex(flex, center, flex-start, wrap)
+        gap: $gap*2
+        margin-top: $gap*2
+        +ft(12, 20, 400)
+
+    &_radio
+        +flex(flex, center, flex-start, nowrap)
+        gap: $gap
+        cursor: pointer
+        b
+            display: block
+            +sz(12px, 12px)
+            border-radius: 50%
+            background-color: $grey_1
+            svg
+                display: none
+        &.checked
+            b
+                svg
+                    display: block
+
+    &_error
+        margin-top: $gap/2
+        +ft(12, 12, 400)
+        color: $red
+        &::before
+            content: '*'
+
+    button
+        +flex(flex, center, center, nowrap)
+        min-width: 215px
+        margin-left: auto
+        margin-bottom: $spacer
+        padding: 15px
+        +theme(dark)
+        border: none
+        border-radius: 5px
+        text-transform: capitalize
+        +ft(16, 16, 500)
+        cursor: pointer
+        &:hover, &:focus, &:active
+            background-color: lighten($black, 10%)
+    
+    label
+        display: block
+        +ft(12, 20, 500)
+        color: $text_3
+
+    &_label
+        +ft(14, 20, 600)
+        color: $black
+
+    input, textarea
+        width: 100%
+        border: none
+        border-bottom: 1px solid $text_3
+        +ft(14, 20, 500)
+        transition: $trs
+        &:hover, &:focus, &:active
+            appearance: none
+            box-shadow: none
+            outline: none
+            border-color: $black
+
+    textarea
+        resize: none
+       
+        
+    +maw($xs)
+        padding: 20px
+        &_row
+            grid-template-columns: 1fr
+        &_group, textarea
+            margin-bottom: $spacer_sm
+        button
+            width: 100%

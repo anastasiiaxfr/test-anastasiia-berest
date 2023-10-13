@@ -1,0 +1,20 @@
+@import fonts
+@import vars
+@import reset
+@import text
+
+.header
+    width: 100%
+    padding: 40px 0
+    .container
+        +flex(flex, center, space-between, wrap)
+        gap: $gap*4
+    .logo
+        +ft(24, 24, 800)
+
+.nav
+    +flex(flex, center, space-between, wrap)
+    gap: $gap*5
+    a
+        &:hover, &:focus, &:active
+            text-shadow: 0 0 0
